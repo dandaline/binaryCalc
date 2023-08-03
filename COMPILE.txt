@@ -1,0 +1,14 @@
+/**
+ * @file Text.txt
+ * @author Laila Staschenuk, lailastaschenuk@outlook.com
+ * @version 0.1
+ * @date 2021-02-17
+ */
+
+Compile:
+
+clang++ binaryMain.cpp binaryNumberFunctions.cpp binaryMenuFunctions.cpp binaryExceptionsFunctions.cpp  -o binaryMain -std=c++14 -Weverything -Wno-c++98-compat-pedantic -Wno-padded
+
+Run:
+
+./binaryMain

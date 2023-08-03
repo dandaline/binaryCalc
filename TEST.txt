@@ -1,0 +1,727 @@
+/**
+ * @file Text.txt
+ * @author Laila Staschenuk 78639
+ * @version 0.1
+ * @date 2021-02-17
+ */
+
+***********************************************************************************************************************************
+
+Kurs: Grundlagen der Programmierung WS 20/21
+Aufgabe: Aufgabe 10 Binärzahlen beliebiger Länge
+
+Dinge, die nicht funktioniert haben sind mit  "P!" markiert
+Dieser Test deckt alle Funktionen von binaryMain ab
+getestet via ssh der HTWK
+
+***********************************************************************************************************************************
+
+Copiler command on dstasche@simson24 HTWK: clang++ binaryMain.cpp binaryNumberFunctions.cpp binaryMenuFunctions.cpp binaryExceptionsFunctions.cpp  -o binaryMain -std=c++14 -Weverything -Wno-c++98-compat-pedantic -Wno-padded
+
+***********************************************************************************************************************************
+• Erlauben Sie die bitweise Negation (operator !), die bitweise AND-Operation ∧ (operator&)
+und die bitweise OR-Operation ∨ (operator|).
+
+OUTPUT AND
+
+                                                            DATA   INDEX                DECIMAL
+                                                      1001011001       0                    601
+                                               11000111111100110       1                 102374
+--------------- input & erase ---------------
+select option: (1 input binary Number) (2 erase binary Number) (3 erase entire memory) (d show data in memory) (b back)
+b
+------------- BINARY NUMBERS ------------ 
+--------------- MAIN MENU --------------- 
+select option: (1 load & save) (2 input & erase) (3 calculate) (d show data in memory) (q quit)
+: 3
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+1
+input ! for optional NOT operator or press any key to continue without: f
+input index of LEFT HAND SIDE number: 0
+input ! for optional NOT operator or press any key to continue without: f
+input index of RIGHT HAND SIDE number: 1
+input operator (& AND) (| OR) (< smaller than) (> bigger than) (1 equal to (==) ) (0 not equal to (!=) 
+(/ division) (- subtraction) ): &
+= 00000001001000000
+result is automatically added to data
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+d
+                                                            DATA   INDEX                DECIMAL
+                                                      1001011001       0                    601
+                                               11000111111100110       1                 102374
+                                               00000001001000000       2                    576
+
+
+
+
+***
+OUTPUT OR
+
+                                                           DATA   INDEX                DECIMAL
+                                                          111111       0                     63
+                                                            1000       1                      8
+--------------- input & erase ---------------
+select option: (1 input binary Number) (2 erase binary Number) (3 erase entire memory) (d show data in memory) (b back)
+b
+------------- BINARY NUMBERS ------------ 
+--------------- MAIN MENU --------------- 
+select option: (1 load & save) (2 input & erase) (3 calculate) (d show data in memory) (q quit)
+: 3
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+1
+input ! for optional NOT operator or press any key to continue without: f
+input index of LEFT HAND SIDE number: 0
+input ! for optional NOT operator or press any key to continue without: d
+input index of RIGHT HAND SIDE number: 1
+input operator (& AND) (| OR) (< smaller than) (> bigger than) (1 equal to (==) ) (0 not equal to (!=) 
+(/ division) (- subtraction) ): |
+= 001000
+result is automatically added to data
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+d
+                                                            DATA   INDEX                DECIMAL
+                                                          111111       0                     63
+                                                            1000       1                      8
+                                                          001000       2                      8
+
+
+
+***
+OUTPUT NOT (on single binary)
+
+
+                                                            DATA   INDEX                DECIMAL
+                            110110110110110110110110110110110110       0            58902408630
+--------------- input & erase ---------------
+select option: (1 input binary Number) (2 erase binary Number) (3 erase entire memory) (d show data in memory) (b back)
+b
+------------- BINARY NUMBERS ------------ 
+--------------- MAIN MENU --------------- 
+select option: (1 load & save) (2 input & erase) (3 calculate) (d show data in memory) (q quit)
+: 3
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+2
+input index of number to apply NOT operator: 0
+= 001001001001001001001001001001001001
+result is automatically added to data
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+d
+                                                            DATA   INDEX                DECIMAL
+                            110110110110110110110110110110110110       0            58902408630
+                            001001001001001001001001001001001001       1             9817068105 
+
+
+
+
+***
+OUTPUT NOT ( on two binaries with AND )
+
+
+                                                            DATA   INDEX                DECIMAL
+                            110110110110110110110110110110110110       0            58902408630
+                            001001001001001001001001001001001001       1             9817068105
+--------------- input & erase ---------------
+select option: (1 input binary Number) (2 erase binary Number) (3 erase entire memory) (d show data in memory) (b back)
+b
+------------- BINARY NUMBERS ------------ 
+--------------- MAIN MENU --------------- 
+select option: (1 load & save) (2 input & erase) (3 calculate) (d show data in memory) (q quit)
+: 3
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+1
+input ! for optional NOT operator or press any key to continue without: !
+input index of LEFT HAND SIDE number: 0
+input ! for optional NOT operator or press any key to continue without: !
+input index of RIGHT HAND SIDE number: 1
+input operator (& AND) (| OR) (< smaller than) (> bigger than) (1 equal to (==) ) (0 not equal to (!=) 
+(/ division) (- subtraction) ): &
+= 000000000000000000000000000000000000
+result is automatically added to data
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+d
+                                                            DATA   INDEX                DECIMAL
+                            110110110110110110110110110110110110       0            58902408630
+                            001001001001001001001001001001001001       1             9817068105
+                            000000000000000000000000000000000000       2                      0
+
+
+***********************************************************************************************************************************
+• Implementieren Sie den Ein- und Ausgabeoperator zur Speicherung der Zahlen in Dateien.
+
+Process: load binaryIn.txt -> delete faulty indices 6, 7 -> save as binaryOut.txt -> erase entire memory -> load binaryOut.txt
+
+OUTPUT
+
+
+                                                            DATA   INDEX                DECIMAL
+--------------- input & erase ---------------
+select option: (1 input binary Number) (2 erase binary Number) (3 erase entire memory) (d show data in memory) (b back)
+b
+------------- BINARY NUMBERS ------------ 
+--------------- MAIN MENU --------------- 
+select option: (1 load & save) (2 input & erase) (3 calculate) (d show data in memory) (q quit)
+: 1
+--------------- load & save ---------------
+select option: (1 load from .txt file) (2 save to .txt file) (d show data in memory) (b back)
+1
+input file name including .txt extention: binaryIn.txt
+                                                            DATA   INDEX                DECIMAL
+                                                       000111111       0                     63
+                                                         1100010       1                     98
+                      111010101001001001000111010010111110001001       2          4029905973129
+                                11001110111100010011001110110010       3             3471913906
+                                   11001110110000000111001110011       4              433589875
+                                         11111111111111111111111       5                8388607
+                                                                       6                      0
+                                                                       7                      0
+                                                1100010001110010       8                  50290
+                                                         1101011       9                    107
+--------------- load & save ---------------
+select option: (1 load from .txt file) (2 save to .txt file) (d show data in memory) (b back)
+b
+------------- BINARY NUMBERS ------------ 
+--------------- MAIN MENU --------------- 
+select option: (1 load & save) (2 input & erase) (3 calculate) (d show data in memory) (q quit)
+: 2
+--------------- input & erase ---------------
+select option: (1 input binary Number) (2 erase binary Number) (3 erase entire memory) (d show data in memory) (b back)
+2
+type the index of the number you wish to erase: 
+6
+                                                            DATA   INDEX                DECIMAL
+                                                       000111111       0                     63
+                                                         1100010       1                     98
+                      111010101001001001000111010010111110001001       2          4029905973129
+                                11001110111100010011001110110010       3             3471913906
+                                   11001110110000000111001110011       4              433589875
+                                         11111111111111111111111       5                8388607
+                                                                       6                      0
+                                                1100010001110010       7                  50290
+                                                         1101011       8                    107
+--------------- input & erase ---------------
+select option: (1 input binary Number) (2 erase binary Number) (3 erase entire memory) (d show data in memory) (b back)
+2
+type the index of the number you wish to erase: 
+6
+                                                            DATA   INDEX                DECIMAL
+                                                       000111111       0                     63
+                                                         1100010       1                     98
+                      111010101001001001000111010010111110001001       2          4029905973129
+                                11001110111100010011001110110010       3             3471913906
+                                   11001110110000000111001110011       4              433589875
+                                         11111111111111111111111       5                8388607
+                                                1100010001110010       6                  50290
+                                                         1101011       7                    107
+--------------- input & erase ---------------
+select option: (1 input binary Number) (2 erase binary Number) (3 erase entire memory) (d show data in memory) (b back)
+b
+------------- BINARY NUMBERS ------------ 
+--------------- MAIN MENU --------------- 
+select option: (1 load & save) (2 input & erase) (3 calculate) (d show data in memory) (q quit)
+: 1
+--------------- load & save ---------------
+select option: (1 load from .txt file) (2 save to .txt file) (d show data in memory) (b back)
+2
+input file name including .txt extention: binaryOut.txt
+...complete, check directory of binaryMain
+--------------- load & save ---------------
+select option: (1 load from .txt file) (2 save to .txt file) (d show data in memory) (b back)
+b
+------------- BINARY NUMBERS ------------ 
+--------------- MAIN MENU --------------- 
+select option: (1 load & save) (2 input & erase) (3 calculate) (d show data in memory) (q quit)
+: 2
+--------------- input & erase ---------------
+select option: (1 input binary Number) (2 erase binary Number) (3 erase entire memory) (d show data in memory) (b back)
+3
+WARNING: You are about to erase all data in memory! Are you sure? (y / n): y
+                                                            DATA   INDEX                DECIMAL
+--------------- input & erase ---------------
+select option: (1 input binary Number) (2 erase binary Number) (3 erase entire memory) (d show data in memory) (b back)
+b
+------------- BINARY NUMBERS ------------ 
+--------------- MAIN MENU --------------- 
+select option: (1 load & save) (2 input & erase) (3 calculate) (d show data in memory) (q quit)
+: 1
+--------------- load & save ---------------
+select option: (1 load from .txt file) (2 save to .txt file) (d show data in memory) (b back)
+1
+input file name including .txt extention: binaryOut.txt
+                                                            DATA   INDEX                DECIMAL
+                                                       000111111       0                     63
+                                                         1100010       1                     98
+                      111010101001001001000111010010111110001001       2          4029905973129
+                                11001110111100010011001110110010       3             3471913906
+                                   11001110110000000111001110011       4              433589875
+                                         11111111111111111111111       5                8388607
+                                                1100010001110010       6                  50290
+                                                         1101011       7                    107
+
+***********************************************************************************************************************************
+• Implementieren Sie eine Operation, die zwei Zahlen konkateniert (aneinanderhaengt).
+
+OUTPUT
+
+
+                                                          DATA   INDEX                DECIMAL
+                                          0000000000000111111111       0                    511
+                                                0000000000000111       1                      7
+--------------- input & erase ---------------
+select option: (1 input binary Number) (2 erase binary Number) (3 erase entire memory) (d show data in memory) (b back)
+b
+------------- BINARY NUMBERS ------------ 
+--------------- MAIN MENU --------------- 
+select option: (1 load & save) (2 input & erase) (3 calculate) (d show data in memory) (q quit)
+: 3
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+3
+input index of first number: 0
+input index of second number: 1
+= 00000000000001111111110000000000000111
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+d
+                                                            DATA   INDEX                DECIMAL
+                                          0000000000000111111111       0                    511
+                                                0000000000000111       1                      7
+                          00000000000001111111110000000000000111       2               33488903
+
+***********************************************************************************************************************************
+• Implementieren Sie die Division zweier Bina ̈rzahlen im Sinne der u ̈blichen schriftlichen Division
+
+OUTPUT ( without remainder )
+
+
+
+                 DATA   INDEX                DECIMAL
+                                                          110010       0                     50
+                                                             101       1                      5
+--------------- input & erase ---------------
+select option: (1 input binary Number) (2 erase binary Number) (3 erase entire memory) (d show data in memory) (b back)
+b
+------------- BINARY NUMBERS ------------ 
+--------------- MAIN MENU --------------- 
+select option: (1 load & save) (2 input & erase) (3 calculate) (d show data in memory) (q quit)
+: 3
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+1
+input ! for optional NOT operator or press any key to continue without: g
+input index of LEFT HAND SIDE number: 0
+input ! for optional NOT operator or press any key to continue without: g 
+input index of RIGHT HAND SIDE number: 1
+input operator (& AND) (| OR) (< smaller than) (> bigger than) (1 equal to (==) ) (0 not equal to (!=) 
+(/ division) (- subtraction) ): /
+remainder = 000000
+= 1010
+result is automatically added to data
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+d
+                                                            DATA   INDEX                DECIMAL
+                                                          110010       0                     50
+                                                             101       1                      5
+                                                            1010       2                     10
+
+
+
+
+***
+OUTPUT ( with remainder[remainder not automatically saved to data ... so far] )
+
+
+
+                                                           DATA   INDEX                DECIMAL
+                                                        10010111       0                    151
+                                             0000000000000000011       1                      3
+--------------- input & erase ---------------
+select option: (1 input binary Number) (2 erase binary Number) (3 erase entire memory) (d show data in memory) (b back)
+b
+------------- BINARY NUMBERS ------------ 
+--------------- MAIN MENU --------------- 
+select option: (1 load & save) (2 input & erase) (3 calculate) (d show data in memory) (q quit)
+: 3
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+1
+input ! for optional NOT operator or press any key to continue without: f
+input index of LEFT HAND SIDE number: 0
+input ! for optional NOT operator or press any key to continue without: g
+input index of RIGHT HAND SIDE number: 1
+input operator (& AND) (| OR) (< smaller than) (> bigger than) (1 equal to (==) ) (0 not equal to (!=) 
+(/ division) (- subtraction) ): /
+remainder = 00000001
+= 0110010
+result is automatically added to data
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+d
+                                                            DATA   INDEX                DECIMAL
+                                                        10010111       0                    151
+                                             0000000000000000011       1                      3
+                                                         0110010       2                     50
+REMAINDER IS 00000001
+
+
+
+
+
+
+***
+OUTPUT (divide same number)
+
+                                                          DATA   INDEX                DECIMAL
+                                                        10010111       0                    151
+                                             0000000000000000011       1                      3
+                                                         0110010       2                     50
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+1   
+input ! for optional NOT operator or press any key to continue without: d
+input index of LEFT HAND SIDE number: 2
+input ! for optional NOT operator or press any key to continue without: l
+input index of RIGHT HAND SIDE number: 2
+input operator (& AND) (| OR) (< smaller than) (> bigger than) (1 equal to (==) ) (0 not equal to (!=) 
+(/ division) (- subtraction) ): /
+= 1
+result is automatically added to data
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+d
+                                                            DATA   INDEX                DECIMAL
+                                                        10010111       0                    151
+                                             0000000000000000011       1                      3
+                                                         0110010       2                     50
+                                                               1       3                      1
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+
+
+
+***
+OUTPUT (forbidden / 0 )
+
+
+                                                           DATA   INDEX                DECIMAL
+                                                              11       0                      3
+                                                           00000       1                      0
+--------------- input & erase ---------------
+select option: (1 input binary Number) (2 erase binary Number) (3 erase entire memory) (d show data in memory) (b back)
+b
+------------- BINARY NUMBERS ------------ 
+--------------- MAIN MENU --------------- 
+select option: (1 load & save) (2 input & erase) (3 calculate) (d show data in memory) (q quit)
+: 3
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+1
+input ! for optional NOT operator or press any key to continue without: f
+input index of LEFT HAND SIDE number: 0
+input ! for optional NOT operator or press any key to continue without: f
+input index of RIGHT HAND SIDE number: 1
+input operator (& AND) (| OR) (< smaller than) (> bigger than) (1 equal to (==) ) (0 not equal to (!=) 
+(/ division) (- subtraction) ): /
+ERROR: only god can divide by 0!
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+d
+                                                            DATA   INDEX                DECIMAL
+                                                              11       0                      3
+                                                           00000       1                      0
+
+
+***********************************************************************************************************************************
+• Implementieren Sie eine Funktion, die die Parita ̈t der Zahl (also die Anzahl an Einsen) bestimmt.
+
+OUTPUT (containing trues)
+
+                                                        DATA   INDEX                DECIMAL
+                                                         1101101       0                    109
+--------------- input & erase ---------------
+select option: (1 input binary Number) (2 erase binary Number) (3 erase entire memory) (d show data in memory) (b back)
+b
+------------- BINARY NUMBERS ------------ 
+--------------- MAIN MENU --------------- 
+select option: (1 load & save) (2 input & erase) (3 calculate) (d show data in memory) (q quit)
+: 3
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+4
+input index of number: 0
+= 11111
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+d
+                                                            DATA   INDEX                DECIMAL
+                                                         1101101       0                    109
+                                                           11111       1                     31
+
+
+
+
+
+
+***
+OUTPUT ( no ERROR thrown, object constructed ) P!
+
+
+                                                            DATA   INDEX                DECIMAL
+                                                              11       0                      3
+                                                           00000       1                      0
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+4
+input index of number: 1
+= 
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+d
+                                                            DATA   INDEX                DECIMAL
+                                                              11       0                      3
+                                                           00000       1                      0
+                                                                       2                      0
+
+***********************************************************************************************************************************
+• Implementieren Sie die Vergleichsoperatoren >, <, ==, != auf dem Datentyp.
+
+OUTPUT 109 < 31 == false
+
+
+
+
+                                                    DATA   INDEX                DECIMAL
+                                                         1101101       0                    109
+                                                           11111       1                     31
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+1
+input ! for optional NOT operator or press any key to continue without: d
+input index of LEFT HAND SIDE number: 0
+input ! for optional NOT operator or press any key to continue without: f
+input index of RIGHT HAND SIDE number: 1
+input operator (& AND) (| OR) (< smaller than) (> bigger than) (1 equal to (==) ) (0 not equal to (!=) 
+(/ division) (- subtraction) ): <
+= 0
+result is automatically added to data
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+d
+                                                            DATA   INDEX                DECIMAL
+                                                         1101101       0                    109
+                                                           11111       1                     31
+                                                               0       2                      0
+
+***
+OUTPUT 109 > 31 == true
+
+
+
+                     DATA   INDEX                DECIMAL
+                                              111001011000001011       0                 235019
+                                                        11111001       1                    249
+--------------- input & erase ---------------
+select option: (1 input binary Number) (2 erase binary Number) (3 erase entire memory) (d show data in memory) (b back)
+b
+------------- BINARY NUMBERS ------------ 
+--------------- MAIN MENU --------------- 
+select option: (1 load & save) (2 input & erase) (3 calculate) (d show data in memory) (q quit)
+: 3
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+1
+input ! for optional NOT operator or press any key to continue without: f
+input index of LEFT HAND SIDE number: 0
+input ! for optional NOT operator or press any key to continue without: f
+input index of RIGHT HAND SIDE number: 1
+input operator (& AND) (| OR) (< smaller than) (> bigger than) (1 equal to (==) ) (0 not equal to (!=) 
+(/ division) (- subtraction) ): >
+= 1
+result is automatically added to data
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+d
+                                                            DATA   INDEX                DECIMAL
+                                              111001011000001011       0                 235019
+                                                        11111001       1                    249
+                                                               1       2                      1
+
+
+
+
+***
+OUTPUT 249 == 249 == true
+
+
+                                                            DATA   INDEX                DECIMAL
+                                              111001011000001011       0                 235019
+                                                        11111001       1                    249
+                                                               1       2                      1
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+1
+input ! for optional NOT operator or press any key to continue without: f
+input index of LEFT HAND SIDE number: 1
+input ! for optional NOT operator or press any key to continue without: l
+input index of RIGHT HAND SIDE number: 1
+input operator (& AND) (| OR) (< smaller than) (> bigger than) (1 equal to (==) ) (0 not equal to (!=) 
+(/ division) (- subtraction) ): 1
+= 1
+result is automatically added to data
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+d
+                                                            DATA   INDEX                DECIMAL
+                                              111001011000001011       0                 235019
+                                                        11111001       1                    249
+                                                               1       2                      1
+                                                               1       3                      1
+ 
+***
+OUTPUT 235019 != 1 == true
+
+
+                                                            DATA   INDEX                DECIMAL
+                                              111001011000001011       0                 235019
+                                                        11111001       1                    249
+                                                               1       2                      1
+                                                               1       3                      1
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+1
+input ! for optional NOT operator or press any key to continue without: f
+input index of LEFT HAND SIDE number: 0
+input ! for optional NOT operator or press any key to continue without: 2
+input index of RIGHT HAND SIDE number: 2
+input operator (& AND) (| OR) (< smaller than) (> bigger than) (1 equal to (==) ) (0 not equal to (!=) 
+(/ division) (- subtraction) ): 0 
+= 1
+result is automatically added to data
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+d
+                                                            DATA   INDEX                DECIMAL
+                                              111001011000001011       0                 235019
+                                                        11111001       1                    249
+                                                               1       2                      1
+                                                               1       3                      1
+                                                               1       4                      1
+
+***********************************************************************************************************************************
+• Implementieren Sie eine Methode, die die Bina ̈rzahl in unsigned long long int umwan-
+delt.
+
+was shown
+***********************************************************************************************************************************
+• Schreiben Sie ein Hauptprogramm, in das Sie Bina ̈rzahlen beliebiger La ̈nge eingeben ko ̈nnen und die zuvor beschriebenen Operationen auf die Bina ̈rzahlen anwenden ko ̈nnen.
+
+was shown
+
+***********************************************************************************************************************************
+ERROR HANDLING
+
+
+OUTPUT (data is empty)
+
+                                                           DATA   INDEX                DECIMAL
+--------------- input & erase ---------------
+select option: (1 input binary Number) (2 erase binary Number) (3 erase entire memory) (d show data in memory) (b back)
+2
+ERROR: no binaries found in data! <-------------------------------------------------------
+--------------- input & erase ---------------
+select option: (1 input binary Number) (2 erase binary Number) (3 erase entire memory) (d show data in memory) (b back)
+
+
+
+
+***
+
+
+
+OUTPUT ( input index exceeds indices held in data )
+
+                                                            DATA   INDEX                DECIMAL
+                                                               1       0                      1
+                                                               1       1                      1
+                                                              11       2                      3
+                                                               1       3                      1
+                                                               1       4                      1
+--------------- input & erase ---------------
+select option: (1 input binary Number) (2 erase binary Number) (3 erase entire memory) (d show data in memory) (b back)
+b
+------------- BINARY NUMBERS ------------ 
+--------------- MAIN MENU --------------- 
+select option: (1 load & save) (2 input & erase) (3 calculate) (d show data in memory) (q quit)
+: 3
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+1
+input ! for optional NOT operator or press any key to continue without: c
+input index of LEFT HAND SIDE number: 6
+ERROR: no index in vector data! <-----------------------------------------------
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+
+
+
+
+***
+
+
+
+
+OUTPUT ( inputting an alphabetic character instead of index (segmentation fault danger) P! Error is always followed by another line of menu, without extra user input
+
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+2
+input index of number to apply NOT operator: f
+ERROR: invalid user input, must be number!
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+ERROR: no menu option found! please select an option displayed below
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+
+
+***
+
+
+OUTPUT ( wrong choice input in menu )
+
+--------------- load & save ---------------
+select option: (1 load from .txt file) (2 save to .txt file) (d show data in memory) (b back)
+c
+ERROR: no menu option found! please select an option displayed below <------------------------------
+--------------- load & save ---------------
+select option: (1 load from .txt file) (2 save to .txt file) (d show data in memory) (b back)
+
+***************************************************************************************************************************************
+back and quit
+
+
+OUTPUT
+
+
+--------------- calculate ---------------
+select option: (1 logical, relational, division & subtraction) (2 NOT on one number) (3 concatenate) (4 parity) (d show data in memory) (b back)
+b
+------------- BINARY NUMBERS ------------ 
+--------------- MAIN MENU --------------- 
+select option: (1 load & save) (2 input & erase) (3 calculate) (d show data in memory) (q quit)
+: q
+--------------- GOOD BYE ---------------
+dstasche@simson24:~/GdP/pruefung$ 
+
+
+**************************************************************************************************************************************
+
+
